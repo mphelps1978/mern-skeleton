@@ -2,6 +2,8 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom'
 
 import Home from './core/Home'
+import Profile from './user/Profile';
+import Signup from './user/Signup';
 import Users from './user/Users';
 
 const MainRouter = () => {
@@ -10,9 +12,12 @@ const MainRouter = () => {
       <Switch>
         <Route exact path = "/" component = {Home}/>
         <Route path="/users" component = {Users}/>
+        <Route path='/signup' component={Signup}/>
+        <Route path='/user/:userId' component={Profile}/>
       </Switch>
     </div>
   )
+
 }
 
 export default MainRouter

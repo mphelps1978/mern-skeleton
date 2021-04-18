@@ -104,10 +104,10 @@ export default function Signup() {
           }
         </CardContent>
         <CardActions>
-          <Button 
-            color='primary' 
-            variant='contained' 
-            onClick={clickSubmit} 
+          <Button
+            color='primary'
+            variant='contained'
+            onClick={clickSubmit}
             className={classes.submit}>Submit</Button>
         </CardActions>
       </Card>
