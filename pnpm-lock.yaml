@@ -2,6 +2,7 @@ dependencies:
   '@hot-loader/react-dom': 17.0.1_react@17.0.2
   '@material-ui/core': 4.11.3_react-dom@17.0.2+react@17.0.2
   '@material-ui/icons': 4.11.2_4ce37a97a3d3aa49030922ba2ca2aa72
+  '@material-ui/styles': 4.11.3_react-dom@17.0.2+react@17.0.2
   body-parser: 1.19.0
   compression: 1.7.4
   cookie-parser: 1.4.5
@@ -4405,6 +4406,7 @@ specifiers:
   '@hot-loader/react-dom': ^17.0.1
   '@material-ui/core': ^4.11.3
   '@material-ui/icons': ^4.11.2
+  '@material-ui/styles': ^4.11.3
   babel-loader: ^8.2.2
   body-parser: ^1.19.0
   compression: ^1.7.4
