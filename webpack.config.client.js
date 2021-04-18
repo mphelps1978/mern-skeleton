@@ -5,7 +5,7 @@ const CURRENT_WORKING_DIR = process.cwd()
 const config = {
   name: 'browser',
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
     path.join(CURRENT_WORKING_DIR, 'client/main.js')
@@ -21,7 +21,12 @@ const config = {
         test: /\.js$|jsx/,
         exclude: '/node_modules/',
         use: ['babel-loader']
+      },
+      {
+        test: /\.(ttf|eot|svg|gif|png|jpg)(\?[\s\S]+)?$/,
+        use: 'file-loader'
       }
+
     ]
   },
   plugins: [

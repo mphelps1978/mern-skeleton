@@ -22,6 +22,10 @@ const config = {
         use: [
           'babel-loader'
         ]
+      },
+      {
+        test: /\.(ttf|eot|svg|gif|png|jpg)(\?[\s\S]+)?$/,
+        use: 'file-loader'
       }
     ]
   }
