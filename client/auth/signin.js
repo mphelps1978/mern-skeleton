@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
+import {Link} from 'react-router-dom'
 
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -16,6 +17,7 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 
 import {signin} from './api-auth'
+import auth from './auth-helper'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -91,12 +93,12 @@ export default function Signin(props) {
             Sign Up
           </Typography>
           <TextField id='email' type='email' label='email'
-            classname={classes.textField}
+            className={classes.textField}
             value={values.email} onChange={handleChange('email')}
             margin='normal'/>
           <br/>
           <TextField id='password' type='password' label='password'
-            classname={classes.textField}
+            className={classes.textField}
             value={values.password} onChange={handleChange('password')}
             margin='normal'/>
           <br/>

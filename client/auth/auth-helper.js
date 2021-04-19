@@ -1,35 +1,29 @@
-import { signout } from "./api-auth"
+import { signout } from './api-auth.js'
 
-function authenticate(jwt, cb) {
-  if (typeof window !== "undefined") {
-    localStorage.setItem('jwt', JSON.stringify(jwt))
+const auth = {
+  isAuthenticated() {
+    if (typeof window == "undefined")
+      return false
+
+    if (sessionStorage.getItem('jwt'))
+      return JSON.parse(sessionStorage.getItem('jwt'))
+    else
+      return false
+  },
+  authenticate(jwt, cb) {
+    if (typeof window !== "undefined")
+      sessionStorage.setItem('jwt', JSON.stringify(jwt))
+    cb()
+  },
+  clearJWT(cb) {
+    if (typeof window !== "undefined")
+      sessionStorage.removeItem('jwt')
+    cb()
+    //optional
+    signout().then((data) => {
+      document.cookie = "t=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+    })
   }
-  cb()
 }
 
-function isAuthenticated() {
-  if (typeof window == "undefined") {
-    return false
-  }
-  if (localStorage.getItem('jwt')) {
-    return JSON.parse(localStorage.getItem('jwt'))
-  } else {
-    return false
-  }
-}
-
-function clearJWT(cb) {
-  if (typeof window !== "undefined") {
-    localStorage.removeItem('jwt')
-  }
-  cb()
-  signout().then((data) => {
-    document.cookie = 't=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
-  })
-}
-
-export {
-  authenticate,
-  isAuthenticated,
-  clearJWT
-}
+export default auth

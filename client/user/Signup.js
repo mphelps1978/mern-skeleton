@@ -82,17 +82,17 @@ export default function Signup() {
             Sign Up
           </Typography>
           <TextField id='name' type='name' label='name'
-            classname={classes.textField}
+            className={classes.textField}
             value={values.name} onChange={handleChange('name')}
             margin='normal'/>
           <br/>
           <TextField id='email' type='email' label='email'
-            classname={classes.textField}
+            className={classes.textField}
             value={values.email} onChange={handleChange('email')}
             margin='normal'/>
           <br/>
           <TextField id='password' type='password' label='password'
-            classname={classes.textField}
+            className={classes.textField}
             value={values.password} onChange={handleChange('password')}
             margin='normal'/>
           <br/>
